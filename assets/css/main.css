@@ -1,0 +1,249 @@
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; 
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+a, button {
+  outline: none;
+  -webkit-tap-highlight-color: transparent; /* Для мобильных браузеров */
+}
+
+/* Default Variables */
+:root {
+  --background: #F6F6F6;
+  --text: #1D2025;
+  --subtext: #454545;
+  --card: #ffffff;
+  --accent: #3B8CFF;
+  --accent-soft: rgba(59, 141, 255, 0.4);
+  --outline-color: #ECECEC;
+  --icon-color: #BCBCBC;
+  --radius-lg: 20px;
+  --border-color: #ECECEC;
+}
+
+/* Dark Theme Variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1D2025;
+    --text: #ebeeee;
+    --subtext: #C0C0C2;
+    --card: rgba(255, 255, 255, 0.04);
+    --accent: #3B8CFF;
+    --accent-soft: rgba(59, 141, 255, 0.04);
+    --outline-color: rgba(59, 141, 255, 0.16);
+    --icon-color: #C0C0C2;
+    --radius-lg: 20px;
+    --border-color: rgba(255, 255, 255, 0.04);
+  }
+}
+
+/* Adaptive Font Size */
+
+@media (max-width: 412px) {
+  html {
+    font-size: 15px; /* Уменьшаем базовый размер на телефонах */
+  }
+}
+
+/* Typography */
+h1 {
+  font-size: 2rem; /* 32px */
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--text);
+}
+
+h2 {
+  font-size: 1.5rem; /* 24px */
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  font-weight: 600;
+  color: var(--text);
+}
+
+p {
+  font-size: 1rem; /* 16px */
+  color: var(--subtext);
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.language-switcher {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.language-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--card);
+  border: none;
+  color: var(--text);
+  font-size: 0.75rem; 
+  font-weight: 700;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.language-button.active {
+  opacity: 1;
+  outline: 2px dashed var(--accent);
+  color: var(--accent);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 1rem 8rem 1rem;
+  border-radius: var(--radius-lg);
+  min-height: 100vh;
+  max-width: 25.75rem; /* 412px */
+  margin: auto;
+}
+
+@media (max-width: 412px) {
+  .container {
+    padding: 1.5rem 1rem 4rem 1rem;
+  }
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-image {
+  width: 7.75rem; /* 124px */
+  height: 7.75rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid transparent;
+  outline: 0.25rem solid var(--outline-color);
+}
+
+.profile-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.social-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.social-card {
+  background-color: var(--card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transform: scale(1);
+  transition: transform 0.1s ease-in-out;
+}
+
+.social-card:hover {
+  transform: scale(1.05);
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-body {
+  margin-right: auto;
+  opacity: 0.8;
+}
+
+.social-link {
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-icon-lg {
+  width: 4rem; /* 64px */
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.social-title {
+  font-size: 1rem; /* 16px */
+  font-weight: 500;
+}
+
+.social-title-lg {
+  font-size: 1.125rem; /* 18px */
+  font-weight: 500;
+}
+
+.social-text {
+  font-size: 0.875rem; /* 14px */
+}
+
+.social-list__top {
+  gap: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 0.125rem solid transparent;
+  outline: 0.25rem solid var(--outline-color);
+  background-color: var(--card);
+}
+
+.social-list__top .social-card {
+  border-radius: 0;
+  background-color: transparent;
+  border-bottom: 0.0625rem solid var(--border-color);
+}
+
+.social-list__top .social-card:last-child {
+  border-bottom: none;
+}
